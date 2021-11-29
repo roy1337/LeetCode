@@ -1,0 +1,5 @@
+-- nth-highest-salary
+
+select * from employee 
+where sal in (select min(sal) from (select distinct top N sal from employee
+                            order by sal desc))
